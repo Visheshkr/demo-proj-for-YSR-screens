@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
-import {Box, Button, Dialog, Divider, Grid ,Table, TableBody, TableCell, TableHead, TableRow, Typography} from'@mui/material';
+import {Box, Button, Dialog, Divider, Grid ,Table, TableBody, TableCell, TableHead, TableRow, TextField, Typography} from'@mui/material';
 import { TextareaAutosize } from '@mui/base';
 
 const arr=[1,2,3,4];
@@ -12,14 +12,17 @@ const App = () => {
   }
   return (
     <>
-      <MedicalServicesIcon sx={{mt:'8px'}}/> <Typography sx={{display:'inline-block',ml:'4px',fontSize:'bold'}}>Erroneous Claims</Typography>
+      <div style={{display:"flex",alignItems:"center"}}>
+        <MedicalServicesIcon />
+       <Typography sx={{ ml:'4px',fontSize:'bold'}}>Erroneous Claims</Typography>
+      </div>
       <Divider sx={{border:'1px solid black'}} orientation="horizontal" flexItem /><br/>
       <br/>
       <Typography variant="h6" sx={{textAlign:"center"}}>CLAIM APPROVAL WORKFLOW</Typography>
-        <Grid container spacing={2} sx={{m:"auto" ,overflow:"hidden"}}>
-          <Table sx={{ minWidth: 650}}>
+        <Grid container spacing={2} >
+          <Table sx={{ width:"100%" , ml:'17px'}}>
             <TableHead>
-              <TableRow>
+              <TableRow >
                 <TableCell sx={{textAlign:'center'}}>Date & Time</TableCell>
                 <TableCell align='right' sx={{textAlign:'center'}}>Role & Name</TableCell>
                 <TableCell align='right'  sx={{textAlign:'center'}}>Remarks</TableCell>
@@ -27,15 +30,15 @@ const App = () => {
                 <TableCell align='right' sx={{textAlign:'center'}}>Amount</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody sx={{overflow:'hidden'}}>
+            <TableBody sx={{border:"2px solid gray"}}>
               {arr.map((item)=>(
 
-              <TableRow  key={item} scope="row" >
-                <TableCell ><TextareaAutosize minRows={4}></TextareaAutosize></TableCell>
-                <TableCell align="right" ><TextareaAutosize minRows={4}></TextareaAutosize></TableCell>
-                <TableCell align="right" ><TextareaAutosize minRows={4}></TextareaAutosize></TableCell>
-                <TableCell align="right" ><TextareaAutosize minRows={4}></TextareaAutosize></TableCell>
-                <TableCell align="right" ><TextareaAutosize minRows={4}></TextareaAutosize></TableCell>
+              <TableRow  key={item} scope="row"  sx={{border:"2px solid gray"}}>
+                <TableCell style={{border:'1px solid black'}} align="right"><TextField minRows={4}></TextField></TableCell>
+                <TableCell style={{border:'1px solid black'}} align="right" ><TextField minRows={4}></TextField></TableCell>
+                <TableCell style={{border:'1px solid black'}} align="right" ><TextField minRows={4}></TextField></TableCell>
+                <TableCell style={{border:'1px solid black'}} align="right" ><TextField minRows={4}></TextField></TableCell>
+                <TableCell style={{border:'1px solid black'}} align="right" ><TextField minRows={4}></TextField></TableCell>
               </TableRow>
               ))}
             </TableBody>
