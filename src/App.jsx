@@ -46,14 +46,14 @@ const App = () => {
           <br/>
         </Grid>
           <br/>
-          <Button variant="outlined" onClick={handleErroneousClick} sx={{ display:'flex',m:'auto',mt:'20px'}}>Initiate Erroneous Claims</Button>
+          <Button variant={openBox? "contained":"outlined"} onClick={handleErroneousClick} sx={{ display:'flex',m:'auto',mt:'20px'}}>Initiate Erroneous Claims</Button>
           <br/>
           {openBox && (
           <Grid >
           <Grid sx={{display:"flex" ,justifyContent:"center"}}><Typography sx={{m:"15px"}}>Remarks*</Typography><TextareaAutosize minRows={3}></TextareaAutosize></Grid>
           <Grid container sx={{display:"flex" ,justifyContent:"center"}}>
           <Button variant="contained"  sx={{ display:'inline-block',mr:'7px',mt:'20px'}}>Submit</Button>
-          <Button variant="contained"  sx={{ display:'inline-block',mr:'7px',mt:'20px'}}>Add attachments</Button>
+          <Button variant="outlined"  sx={{ display:'inline-block',mr:'7px',mt:'20px'}}>Add attachments</Button>
           </Grid>
           </Grid>)}
           
